@@ -1,0 +1,75 @@
+body {
+    background-color: red;
+}
+#container {
+    background-color: lightblue;
+    width: 936px;
+    height: 335px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+#left {
+    background-color: lightcyan;
+    width: 240px;
+    justify-content: center;
+    display: flex;
+}
+#middle {
+    background-color: green;
+    width: 568px;
+    display: flex;
+    justify-content: center;
+}
+#right {
+    background-color: yellow;
+    width: 128px;
+}
+#clock {
+    width: 195px;
+    height: 195px;
+    background-color: orange;
+    border-radius: 50%;
+}
+
+.insideContainer {
+    padding-top: 20px
+}
+
+#departureInfo {
+    width: 480px;
+    height: 265px;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#trainInfoTimeAndTrain {
+    height: 40px;
+    background-color: lightgreen;
+    display: flex;
+}
+
+#trainInfoDestination {
+    height: 200px;
+    background-color: lightpink;
+}
+#trainInfoTrainlength {
+    height: 25px;
+    background-color: lightseagreen;
+    text-align: center;
+}
+#trainInfoNext {
+    height: 25px;
+    background-color: lightcoral;
+}
+
+#time {
+    width: 50%;
+    background-color: darkmagenta;
+}
+#train {
+    width: 50%;
+    background-color: burlywood;
+}

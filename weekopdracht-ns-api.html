@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>eerst volgende vertrekken:</h3>
+    <div id="departures"></div>
+
+    <script>
+        // let api_url = "https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/departures?station=ut&maxJourneys=3"
+        let api_url = "data.json" // bovenstaande url een keer opgevraagd, dan via console log weergegeven, en dan rechtermuisklik op object, en dan copy object
+        // van https://apiportal.ns.nl/api-details#api=reisinformatie-api&operation=getDepartures
+        // fetch(api_url, {
+        //     method: 'GET',
+        //     // Request headers
+        //     headers: {
+        //         'Cache-Control': 'no-cache',
+        //         'Ocp-Apim-Subscription-Key': '8c288d6cadeb4a9187fc713a85208540',}
+        // })
+        // .then(response => {
+        //     // console.log(response.status);
+        //     // console.log(response.text());
+        //     nsData = JSON.parse(response.text())
+        //     console.log(nsData)
+        // })
+        // .catch(err => console.error(err));
+
+        fetch(api_url, {
+            method: 'GET',
+            // Request headers
+            headers: {
+                'Cache-Control': 'no-cache',
+                'Ocp-Apim-Subscription-Key': '8c288d6cadeb4a9187fc713a85208540',}
+            }) //load json data from file
+            .then((x) => x.text())
+            .then((y) => {
+            nsData = JSON.parse(y);
+            console.log(nsData)
+            //console.log(nsData.payload.departures)
+            let departures = nsData.payload.departures
+
+            showData(departures);
+
+        });
+        function showData(departures) {
+            console.log(departures);
+            // for($i = 0; $i < departures.length; $i++) {
+            //     console.log(departures[$i].direction);
+            //     document.getElementById("departures").innerHTML += departures[$i].direction + "<br>";
+            // }
+            departures.forEach(departure => {
+                console.log(departure.direction);
+                document.getElementById("departures").innerHTML += departure.direction + "<br>";
+            })
+        }
+
+    </script>
+
+
+
+
+</body>
+</html>

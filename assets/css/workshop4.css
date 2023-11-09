@@ -1,17 +1,78 @@
-#schaakbord {
-    width: 508px;
+#schaakbordFloat {
+    width: 480px;
+    height: 480px; /* height is nodig bij de float-versie */
     border: 2px solid black;
-    
+}
+#schaakbordFloat .wit {
+    width: 60px;
+    height: 60px;
+    float: left;
+}
+#schaakbordFloat .grijs {
+    width: 60px;
+    height: 60px;
+    background-color: gray;
+    float: left;
+
 }
 
-.wit {
+
+
+/* met inline blocks. De trick tegen witruimte is: font-size: 0 */
+#schaakbord1 {
+    width: 480px;
+    border: 2px solid black;
+    font-size: 0;
+    
+}
+#schaakbord1 .wit {
     width: 60px;
     height: 60px;
     display: inline-block;
 }
-.grijs {
+#schaakbord1 .grijs {
     width: 60px;
     height: 60px;
     display: inline-block;
+    background-color: gray;
+}
+
+
+/* flesbox */
+#schaakbord2 {
+    width: 480px;
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#schaakbord2 .wit {
+    width: 60px;
+    height: 60px;
+
+}
+#schaakbord2 .grijs {
+    width: 60px;
+    height: 60px;
+    background-color: gray;
+}
+
+#schaakbord3 {
+    width: 480px;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    /* grid-template-rows helemaal niet nodig */
+    /* grid-template-rows: repeat(8, auto); */
+}
+
+#schaakbord3 .wit {
+    width: 60px;
+    height: 60px;
+
+}
+#schaakbord3 .grijs {
+    width: 60px;
+    height: 60px;
     background-color: gray;
 }
